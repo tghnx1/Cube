@@ -3,19 +3,28 @@ import { cube } from './cube.js';
 import * as THREE from 'three';
 
 let isDragging = false;
+let dragThreshold = 0; // Records the total movement during dragging
+const maxClickThreshold = 5; // Maximum movement (in pixels) to still consider as a click
+
 const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2();
 
 function onMouseDown() {
     isDragging = true; // Start dragging
+    dragThreshold = 0;
 }
 
 function onMouseMove(event) {
     if (!isDragging) return;
 
     const rotationSpeed = 0.005; // Adjust rotation speed
-    const deltaX = event.movementX || 0; // Horizontal movement
-    const deltaY = event.movementY || 0; // Vertical movement
+
+    // Use event.movementX/movementY (mouse movement) OR default to 0 if unavailable
+    const deltaX = event.movementX || event.deltaX || 0; // Horizontal movement
+    const deltaY = event.movementY || event.deltaY || 0; // Vertical movement
+
+    // Update drag threshold (track movement distance)
+    dragThreshold += Math.sqrt(deltaX * deltaX + deltaY * deltaY);
 
     cube.rotation.y += deltaX * rotationSpeed; // Rotate on Y-axis
     cube.rotation.x += deltaY * rotationSpeed; // Rotate on X-axis
@@ -26,7 +35,9 @@ function onMouseUp() {
 }
 
 function onMouseClick(event) {
-    // Convert mouse click to normalized device coordinates
+    if (dragThreshold > maxClickThreshold)
+        return; // It was a drag, so don't navigate.
+        // Convert mouse click to normalized device coordinates
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
@@ -42,14 +53,23 @@ function onMouseClick(event) {
 
 function redirectToPage(faceIndex) {
     const pages = [
-        './page1.html',
-        './page2.html',
-        './page3.html',
-        './page4.html',
-        './page5.html',
-        './page6.html',
+        './Pages/page1.html',
+        './Pages/page2.html',
+        './Pages/page3.html',
+        './Pages/page4.html',
+        './Pages/page5.html',
+        './Pages/page6.html',
     ];
     window.location.href = pages[faceIndex]; // Navigate to corresponding page
+}
+function onMouseWheel(event) {
+    const zoomSpeed = 0.1; // Speed of zooming; adjust for sensitivity
+
+    // Use deltaY for zooming out/in
+    camera.position.z += event.deltaY * zoomSpeed;
+
+    // Clamp camera position to prevent excessive zooming
+    camera.position.z = THREE.MathUtils.clamp(camera.position.z, 2, 20); // Adjust min (2) & max (20)
 }
 
 function onResize() {
@@ -65,6 +85,8 @@ function registerEventListeners(renderer) {
     window.addEventListener('mouseup', onMouseUp);
     window.addEventListener('click', onMouseClick); // Enable raycasting
     window.addEventListener('resize', onResize.bind(renderer)); // Resize listener
+    window.addEventListener('wheel', onMouseWheel); // Add zoom with mouse wheel
+
 }
 
 export { registerEventListeners };

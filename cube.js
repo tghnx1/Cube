@@ -13,12 +13,15 @@ const textures = [
     textureLoader.load('./Public/1.png'), // Left face
 ];
 
+textures.minFilter = THREE.NearestFilter; // Disable mipmaps; prioritize sharpness
+textures.magFilter = THREE.NearestFilter; // For magnifying the texture
+
 // Define an array of materials, one for each face
 const materials = textures.map(texture => new THREE.MeshPhongMaterial({ map: texture }));
 
 
 // Define the geometry for the cube
-const geometry = new THREE.BoxGeometry(1, 1, 1); // Cube dimensions (1x1x1)
+const geometry = new THREE.BoxGeometry(3, 3, 3); // Cube dimensions (1x1x1)
 
 // Create the cube mesh
 const cube = new THREE.Mesh(geometry, materials);
