@@ -4,7 +4,11 @@ import * as THREE from 'three';
 
 let isDragging = false;
 let dragThreshold = 0; // Records the total movement during dragging
+let targetZoom = camera.position.z; // The zoom position we want to reach
+const zoomSpeed = 0.1; // Zoom sensitivity
+const smoothingFactor = 0.1; // Determines how smooth the zooming is (lower is smoother)
 const maxClickThreshold = 5; // Maximum movement (in pixels) to still consider as a click
+
 
 const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2();
@@ -63,14 +67,22 @@ function redirectToPage(faceIndex) {
     window.location.href = pages[faceIndex]; // Navigate to corresponding page
 }
 function onMouseWheel(event) {
-    const zoomSpeed = 0.1; // Speed of zooming; adjust for sensitivity
+    // Adjust the target zoom based on the scroll wheel input (deltaY)
+    targetZoom += event.deltaY * zoomSpeed;
 
-    // Use deltaY for zooming out/in
-    camera.position.z += event.deltaY * zoomSpeed;
-
-    // Clamp camera position to prevent excessive zooming
-    camera.position.z = THREE.MathUtils.clamp(camera.position.z, 2, 20); // Adjust min (2) & max (20)
+    // Clamp the target zoom to prevent excessive zooming in or out
+    targetZoom = THREE.MathUtils.clamp(targetZoom, 2, 20); // Adjust min (2) & max (20) zoom levels
 }
+
+function smoothZoom() {
+    // Smoothly transition the camera's current zoom (z position) towards the target zoom
+    camera.position.z += (targetZoom - camera.position.z) * smoothingFactor;
+
+    // Request the next frame to continuously apply the smooth transition
+    requestAnimationFrame(smoothZoom);
+}
+smoothZoom();
+
 
 function onResize() {
     const renderer = this; // Get renderer instance

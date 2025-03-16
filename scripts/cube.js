@@ -5,12 +5,12 @@ import { scene } from './scene.js';
 const textureLoader = new THREE.TextureLoader();
 // Load textures for all six faces
 const textures = [
-    textureLoader.load('./Public/1.png'), // Front face
-    textureLoader.load('./Public/1.png'), // Back face
-    textureLoader.load('./Public/1.png'), // Top face
-    textureLoader.load('./Public/1.png'), // Bottom face
-    textureLoader.load('./Public/1.png'), // Right face
-    textureLoader.load('./Public/1.png'), // Left face
+    textureLoader.load('./Photos/1.png'), // Front face
+    textureLoader.load('./Photos/1.png'), // Back face
+    textureLoader.load('./Photos/1.png'), // Top face
+    textureLoader.load('./Photos/1.png'), // Bottom face
+    textureLoader.load('./Photos/1.png'), // Right face
+    textureLoader.load('./Photos/1.png'), // Left face
 ];
 
 textures.minFilter = THREE.NearestFilter; // Disable mipmaps; prioritize sharpness
