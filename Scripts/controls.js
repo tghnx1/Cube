@@ -35,6 +35,7 @@ function onMouseMove(event) {
     cube.rotation.x += deltaY * rotationSpeed; // Rotate on X-axis
 }
 
+
 function onMouseUp() {
     isDragging = false; // Stop dragging
 }
