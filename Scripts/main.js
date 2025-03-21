@@ -4,9 +4,10 @@ import { animate } from './animate.js';
 import { registerEventListeners } from './controls.js';
 
 // Initialize the renderer
-const renderer = new THREE.WebGLRenderer({ antialias: true });
+const renderer = new THREE.WebGLRenderer({ antialias: true});
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(window.devicePixelRatio); // Use pixel ratio for high-DPI displays
+
 
 document.body.appendChild(renderer.domElement);
 

@@ -7,17 +7,29 @@ body, html {
     overflow: hidden; /* Prevent scrolling on the landing page */
 }
 
+
 /* Full-Screen Hero Section */
 .hero {
     height: 100vh;
     width: 100%;
-    background: url('../Photos/6.png') no-repeat center center/cover;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    overflow: hidden; /* Prevent video from spilling */
+}
+
+/* Hero Background Video */
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video covers the entire section */
+    z-index: 0; /* Places video behind everything else */
 }
 
 /* Add a Dark Overlay for Better Readability */

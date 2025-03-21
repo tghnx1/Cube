@@ -3,6 +3,7 @@ import { cube } from './cube.js';
 import * as THREE from 'three';
 
 let isDragging = false;
+export { isDragging };
 let dragThreshold = 0; // Records the total movement during dragging
 let targetZoom = camera.position.z; // The zoom position we want to reach
 const zoomSpeed = 0.1; // Zoom sensitivity
@@ -59,7 +60,7 @@ function redirectToPage(faceIndex) {
     const pages = [
         './Pages/page1.html',
         './Pages/page2.html',
-        './Pages/page3.html',
+        './Pages/About_me.html',
         './Pages/page4.html',
         './Pages/page5.html',
         './Pages/page6.html',
@@ -74,31 +75,11 @@ function onMouseWheel(event) {
     targetZoom = THREE.MathUtils.clamp(targetZoom, 2, 20); // Adjust min (2) & max (20) zoom levels
 }
 
-function smoothZoom() {
-    // Smoothly transition the camera's current zoom (z position) towards the target zoom
-    camera.position.z += (targetZoom - camera.position.z) * smoothingFactor;
-
-    // Request the next frame to continuously apply the smooth transition
-    requestAnimationFrame(smoothZoom);
-}
-smoothZoom();
-
-
-function onResize() {
-    const renderer = this; // Get renderer instance
-    camera.aspect = window.innerWidth / window.innerHeight; // Update camera aspect
-    camera.updateProjectionMatrix(); // Recalculate projection matrix
-    renderer.setSize(window.innerWidth, window.innerHeight); // Update renderer size
-}
-
 function registerEventListeners(renderer) {
     window.addEventListener('mousedown', onMouseDown);
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('mouseup', onMouseUp);
     window.addEventListener('click', onMouseClick); // Enable raycasting
-    window.addEventListener('resize', onResize.bind(renderer)); // Resize listener
-    window.addEventListener('wheel', onMouseWheel); // Add zoom with mouse wheel
-
 }
 
 export { registerEventListeners };

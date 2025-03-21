@@ -5,12 +5,12 @@ import { scene } from './scene.js';
 const textureLoader = new THREE.TextureLoader();
 // Load textures for all six faces
 const textures = [
-    textureLoader.load('./Photos/1.png'), // Front face
-    textureLoader.load('./Photos/1.png'), // Back face
-    textureLoader.load('./Photos/1.png'), // Top face
-    textureLoader.load('./Photos/1.png'), // Bottom face
-    textureLoader.load('./Photos/1.png'), // Right face
-    textureLoader.load('./Photos/1.png'), // Left face
+    textureLoader.load('./Media/2.png'), // Front face
+    textureLoader.load('./Media/2.png'), // Back face
+    textureLoader.load('./Media/2.png'), // Top face
+    textureLoader.load('./Media/1.png'), // Bottom face
+    textureLoader.load('./Media/1.png'), // Right face
+    textureLoader.load('./Media/1.png'), // Left face
 ];
 
 textures.minFilter = THREE.NearestFilter; // Disable mipmaps; prioritize sharpness
@@ -21,10 +21,14 @@ const materials = textures.map(texture => new THREE.MeshPhongMaterial({ map: tex
 
 
 // Define the geometry for the cube
-const geometry = new THREE.BoxGeometry(3, 3, 3); // Cube dimensions (1x1x1)
+const geometry = new THREE.BoxGeometry(4, 4, 4); // Cube dimensions (1x1x1)
 
 // Create the cube mesh
 const cube = new THREE.Mesh(geometry, materials);
+
+// Set the starting position to isometric angles
+cube.rotation.y = Math.PI / 4; // 45 degrees around the Y-axis
+cube.rotation.x = Math.PI / 6; // 45 degrees around the X-axis
 
 // Add the cube to the scene
 scene.add(cube);
