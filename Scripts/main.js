@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+import * as THREE from 'https://unpkg.com/three@0.157.0/build/three.module.js';
 import { scene, camera } from './scene.js';
 import { animate } from './animate.js';
 import { registerEventListeners } from './controls.js';
