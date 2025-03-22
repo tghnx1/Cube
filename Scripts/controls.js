@@ -13,6 +13,8 @@ const maxClickThreshold = 5; // Maximum movement (in pixels) to still consider a
 
 const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2();
+let lastTouchX = 0;
+let lastTouchY = 0;
 
 function onMouseDown() {
     isDragging = true; // Start dragging
@@ -33,6 +35,25 @@ function onMouseMove(event) {
 
     cube.rotation.y += deltaX * rotationSpeed; // Rotate on Y-axis
     cube.rotation.x += deltaY * rotationSpeed; // Rotate on X-axis
+}
+
+function onTouchMove(event) {
+    if (!isDragging) return;
+
+    const rotationSpeed = 0.005; // Adjust rotation speed
+
+    const touch = event.touches[0];
+    const deltaX = touch.clientX - lastTouchX; // Horizontal movement
+    const deltaY = touch.clientY - lastTouchY; // Vertical movement
+
+    // Update drag threshold (track movement distance)
+    dragThreshold += Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+
+    cube.rotation.y += deltaX * rotationSpeed; // Rotate on Y-axis
+    cube.rotation.x += deltaY * rotationSpeed; // Rotate on X-axis
+
+    lastTouchX = touch.clientX;
+    lastTouchY = touch.clientY;
 }
 
 
@@ -60,20 +81,26 @@ function onMouseClick(event) {
 function redirectToPage(faceIndex) {
     const pages = [
         './Pages/Playground.html',
-        './Pages/page2.html',
-        './Pages/About_me.html',
-        './Pages/page4.html',
-        './Pages/page5.html',
-        './Pages/page6.html',
+        './Pages/Halloween.html',
+        './Pages/About.html',
+        './Pages/Legalisation.html',
+        './Pages/Mein_Haus.html',
     ];
-    window.location.href = pages[faceIndex]; // Navigate to corresponding page
+    if (faceIndex >= 0 && faceIndex < pages.length) {
+        window.location.href = pages[faceIndex]; // Navigate to corresponding page
+    }
 }
-function onMouseWheel(event) {
-    // Adjust the target zoom based on the scroll wheel input (deltaY)
-    targetZoom += event.deltaY * zoomSpeed;
 
-    // Clamp the target zoom to prevent excessive zooming in or out
-    targetZoom = THREE.MathUtils.clamp(targetZoom, 2, 20); // Adjust min (2) & max (20) zoom levels
+// Touch event handlers
+function onTouchStart(event) {
+    isDragging = true; // Start dragging
+    dragThreshold = 0;
+    lastTouchX = event.touches[0].clientX;
+    lastTouchY = event.touches[0].clientY;
+}
+
+function onTouchEnd() {
+    isDragging = false; // Stop dragging
 }
 
 function registerEventListeners(renderer) {
@@ -81,6 +108,10 @@ function registerEventListeners(renderer) {
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('mouseup', onMouseUp);
     window.addEventListener('click', onMouseClick); // Enable raycasting
+    window.addEventListener('touchstart', onTouchStart);
+    window.addEventListener('touchmove', onTouchMove);
+    window.addEventListener('touchend', onTouchEnd);
 }
+
 
 export { registerEventListeners };
