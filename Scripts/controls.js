@@ -59,7 +59,7 @@ function onMouseClick(event) {
 
 function redirectToPage(faceIndex) {
     const pages = [
-        './Pages/page1.html',
+        './Pages/Playground.html',
         './Pages/page2.html',
         './Pages/About_me.html',
         './Pages/page4.html',
