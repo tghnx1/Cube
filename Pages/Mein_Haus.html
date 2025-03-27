@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Photo and Video Gallery</title>
   <link rel="stylesheet" href="../Styles/About_me.css">
-  <script src="https://player.vimeo.com/api/player.js"></script> <!-- Use the CDN link for the Vimeo Player API -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
 </head>
 <body>
 
@@ -20,11 +20,25 @@
 
     player.on('loaded', () => {
       player.play().then(() => {
-        player.setVolume(0);
+        player.setVolume(1);
       }).catch(error => {
         console.error('Error playing the video:', error);
       });
     });
+
+    // Handle autoplay restrictions on mobile devices
+    player.on('play', () => {
+      player.setVolume(1);
+    });
+
+    // Fallback for mobile devices
+    document.body.addEventListener('touchstart', () => {
+      player.play().then(() => {
+        player.setVolume(1);
+      }).catch(error => {
+        console.error('Error playing the video on touchstart:', error);
+      });
+    }, { once: true });
   });
 </script>
 </body>
