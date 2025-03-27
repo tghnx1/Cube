@@ -10,10 +10,10 @@ window.addEventListener('DOMContentLoaded', () => {
     soundToggle.addEventListener('click', () => {
         if (video.muted) {
             video.muted = false; // Unmute the video
-            soundToggle.textContent = '🔇'; // Update button icon to "Mute"
+            soundToggle.textContent = '🔊'; // Update button icon to "Mute"
         } else {
             video.muted = true; // Mute the video
-            soundToggle.textContent = '🔊'; // Update button icon to "Sound ON"
+            soundToggle.textContent = '🔇'; // Update button icon to "Sound ON"
         }
     });
 
