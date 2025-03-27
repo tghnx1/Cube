@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const soundToggle = document.getElementById('sound-toggle');
 
     // Initially mute the video
-        video.muted = true;
+        video.muted = false;
 
 
     // Add click event listener to the sound toggle button
