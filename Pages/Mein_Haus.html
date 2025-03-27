@@ -20,7 +20,7 @@
 
     player.on('loaded', () => {
       player.play().then(() => {
-        player.setVolume(1);
+        player.setVolume(0);
       }).catch(error => {
         console.error('Error playing the video:', error);
       });
