@@ -26,17 +26,12 @@
       });
     });
 
-    // Handle autoplay restrictions on mobile devices
-    player.on('play', () => {
-      player.setVolume(1);
-    });
-
-    // Fallback for mobile devices
-    document.body.addEventListener('touchstart', () => {
+    // Fallback for autoplay restrictions
+    document.body.addEventListener('click', () => {
       player.play().then(() => {
         player.setVolume(1);
       }).catch(error => {
-        console.error('Error playing the video on touchstart:', error);
+        console.error('Error playing the video on click:', error);
       });
     }, { once: true });
   });
