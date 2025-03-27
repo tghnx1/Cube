@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Photo and Video Gallery</title>
   <link rel="stylesheet" href="../Styles/About_me.css">
-  <script src="../Scripts/sound.js"></script> <!-- Use a locally stored library -->
+  <script src="https://player.vimeo.com/api/player.js"></script> <!-- Use the CDN link for the Vimeo Player API -->
 </head>
 <body>
 
@@ -19,9 +19,11 @@
     const player = new Vimeo.Player(iframe);
 
     player.on('loaded', () => {
-      player.play();
-      player.setVolume(1);
-      player.requestFullscreen();
+      player.play().then(() => {
+        player.setVolume(1);
+      }).catch(error => {
+        console.error('Error playing the video:', error);
+      });
     });
   });
 </script>
