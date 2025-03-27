@@ -4,14 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Photo and Video Gallery</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://player.vimeo.com/api/player.js"></script>
+  <link rel="stylesheet" href="../Styles/About_me.css">
+  <script src="../Scripts/sound.js"></script> <!-- Use a locally stored library -->
 </head>
-
 <body>
+
 <div class="vimeo-embed">
-  <iframe id="vimeo-player" src="https://player.vimeo.com/video/1070111241?h=b77fd7933f&badge=0&autopause=0&player_id=0&app_id=58479&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="refugee"></iframe>
+  <iframe id="vimeo-player" src="https://player.vimeo.com/video/1070111241?h=b77fd7933f&badge=0&autopause=0&player_id=0&app_id=58479&background=1" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="refugee"></iframe>
 </div>
+<script src="../Scripts/sound.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const iframe = document.getElementById('vimeo-player');
