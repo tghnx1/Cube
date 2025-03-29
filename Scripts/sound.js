@@ -1,20 +1,23 @@
 window.addEventListener('DOMContentLoaded', () => {
-    const video = document.getElementById('hero-video');
+    const iframe = document.getElementById('vimeo-player');
+    const player = new Vimeo.Player(iframe);
     const soundToggle = document.getElementById('sound-toggle');
 
     // Initially mute the video
-        video.muted = false;
+    player.setVolume(0);
 
 
     // Add click event listener to the sound toggle button
     soundToggle.addEventListener('click', () => {
-        if (video.muted) {
-            video.muted = false; // Unmute the video
+        if (volume === 0) {
+            player.setVolume(1); // Unmute the video
             soundToggle.textContent = '🔊'; // Update button icon to "Mute"
         } else {
-            video.muted = true; // Mute the video
+            player.setVolume(0);; // Mute the video
             soundToggle.textContent = '🔇'; // Update button icon to "Sound ON"
         }
+    }).catch(error => {
+        console.error('Error getting the volume:', error);
     });
 
     // Retrieve last playback position from localStorage
@@ -34,4 +37,5 @@ window.addEventListener('DOMContentLoaded', () => {
         localStorage.removeItem('videoPlaybackTime');
         localStorage.removeItem('videoMuted');
     });
+
 });
