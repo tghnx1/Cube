@@ -1,0 +1,16 @@
+/* vimeo.css */
+.vimeo-embed {
+    display: block; /* Show by default */
+    position: relative;
+    padding: 56.25% 0 0 0; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.vimeo-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
