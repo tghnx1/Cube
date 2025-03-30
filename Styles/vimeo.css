@@ -22,9 +22,9 @@
 .vimeo-matreshka {
     position: fixed;
     top: 0;
-    left: -10%;
-    width: 105%;
-    height: 105%;
+    left: -5%;
+    width: 115%;
+    height: 115%;
     z-index: -1;
     overflow: hidden;
 }
