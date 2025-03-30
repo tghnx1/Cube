@@ -36,3 +36,22 @@
     border: none;
     z-index: 0;
 }
+
+.vimeo-legalization {
+    position: fixed;
+    top: 0;
+    left: -3%;
+    width: 105%;
+    height: 105%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.vimeo-legalization iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 120%;
+    pointer-events: none; /* Ensure the video does not interfere with other elements */
+}
