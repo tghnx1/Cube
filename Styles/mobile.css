@@ -9,6 +9,7 @@
     .vimeo-embed {
             position: relative;
             left: 0;
+            top: 30vh;
             width: 100vw;
             height: 100vh;
             overflow: hidden;
