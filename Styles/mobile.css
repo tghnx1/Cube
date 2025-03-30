@@ -9,11 +9,11 @@
     .vimeo-embed {
             position: relative;
             left: 0;
-            width: 100vw;
+           /* width: 100vw; */
             height: 100vh;
             overflow: hidden;
             z-index: 0;
-        transform: scale(3.8);
+        /* transform: scale(3.6); */
         }
 
     .vimeo-embed iframe {
