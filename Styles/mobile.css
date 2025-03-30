@@ -7,17 +7,24 @@
 /* mobile.css */
 @media (max-width: 768px) {
     .vimeo-embed {
+        .vimeo-embed {
         position: relative;
         width: 100%;
-        height: 300px; /* <-- Crop height here */
+            height: 300px; /* Crop height here */
         overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
     }
     .vimeo-embed iframe {
         position: absolute;
-        top: -100px; /* <-- Adjust to crop vertically */
-        left: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         width: 100%;
-        height: 500px; /* <-- Larger than container to allow cropping */
+            height: 500px; /* Larger than container to allow cropping */
+            pointer-events: none;
+        }
         pointer-events: none;
     }
 }
