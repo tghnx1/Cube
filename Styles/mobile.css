@@ -9,11 +9,12 @@
 @media (max-width: 768px) {
 
     .soundcloud-embed {
-        position: absolute;
+        position: fixed;
         bottom: 0;
         left: 0;
         width: 100%;
-        z-index: 3; /* Ensure it is above other elements */
+        height: 100px;
+        z-index: 9999; /* гарантированно выше */
     }
 
     .hero-content {
