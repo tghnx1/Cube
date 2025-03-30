@@ -23,8 +23,8 @@
     position: fixed;
     top: 0;
     left: -5%;
-    width: 115%;
-    height: 115%;
+    width: 105%;
+    height: 105%;
     z-index: -1;
     overflow: hidden;
 }
@@ -33,8 +33,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 130%;
-    height: 130%;
+    width: 150%;
+    height: 150%;
     pointer-events: none;
 }
 
