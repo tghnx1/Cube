@@ -20,20 +20,19 @@
 
 /* vimeo.css */
 .vimeo-matreshka {
-    position: fixed;
-    top: 0;
-    left: -10%;
-    width: 150%;
-    height: 150%;
-    z-index: -1;
+    position: relative;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
+    z-index: 0;
+    transform: scale(1.2);
 }
 
 .vimeo-matreshka iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 120%;
-    height: 120%;
-    pointer-events: none; /* Ensure the video does not interfere with other elements */
+    position: relative;
+    top: 50%;
+    left: 50%;
+    border: none;
+    z-index: 0;
 }
