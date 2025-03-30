@@ -13,7 +13,7 @@
         bottom: 0;
         left: 0;
         width: 100%;
-        z-index: 2; /* Ensure it is above other elements */
+        z-index: 3; /* Ensure it is above other elements */
     }
 
     .hero-content {
