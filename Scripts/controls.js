@@ -84,7 +84,6 @@ function redirectToPage(faceIndex) {
         './Pages/Halloween.html',
         './Pages/About.html',
         './Pages/Legalisation.html',
-        './Pages/Mein_Haus.html',
     ];
     if (faceIndex >= 0 && faceIndex < pages.length) {
         window.location.href = pages[faceIndex]; // Navigate to corresponding page
