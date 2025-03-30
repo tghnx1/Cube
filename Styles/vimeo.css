@@ -17,3 +17,23 @@
     height: 120%;
     pointer-events: none; /* Ensure the video does not interfere with other elements */
 }
+
+/* vimeo.css */
+.vimeo-matreshka {
+    position: fixed;
+    top: 0;
+    left: -5%;
+    width: 115%;
+    height: 115%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.vimeo-matreshka iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 120%;
+    pointer-events: none; /* Ensure the video does not interfere with other elements */
+}
