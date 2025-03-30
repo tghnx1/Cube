@@ -9,7 +9,6 @@
     .vimeo-embed {
             position: relative;
             left: 0;
-            top: 15vh;
             width: 100vw;
             height: 100vh;
             overflow: hidden;
@@ -20,7 +19,7 @@
         position: relative;
         top: 50%;
         left: 50%;
-        transform: scale(5);
+        transform: scale(6);
         transform-origin: center;
         border: none;
     }
