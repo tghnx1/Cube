@@ -20,7 +20,7 @@
         align-items: center;
         top: -35%;
     }
-    .vimeo-embed {
+    .vimeo-refugee {
             position: relative;
             left: 0;
             width: 100vw;
@@ -30,7 +30,7 @@
          transform: scale(4);
         }
 
-    .vimeo-embed iframe {
+    .vimeo-refugee iframe {
         position: relative;
         top: 50%;
         left: 50%;
