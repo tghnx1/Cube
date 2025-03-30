@@ -7,6 +7,8 @@
 /* mobile.css */
 @media (max-width: 768px) {
     .vimeo-embed {
+        top: 50%;
+        left: 50%;
         position: relative;              /* Changed from absolute */
         height: 100%;
         overflow: hidden;
