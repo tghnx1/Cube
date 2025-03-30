@@ -23,7 +23,7 @@
     position: fixed; /* Fix the position */
     top: 0;
     left: 0;
-    z-index: 0; /* Places the photo behind everything else */
+    z-index: -1; /* Places the photo behind everything else */
 }
 
 .hero-video {
