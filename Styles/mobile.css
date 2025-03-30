@@ -22,6 +22,7 @@
         top: 50%;
         left: 50%;
         border: none;
+        z-index: -1;
     }
 
     .soundcloud-embed {
@@ -29,7 +30,7 @@
         bottom: 0;
         left: 50%;
         width: 100%;
-        z-index: 2; /* Ensure the iframe is above the hero-photo */
+        z-index: -1; /* Ensure the iframe is above the hero-photo */
     }
 
     .hero h1 {
