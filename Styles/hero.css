@@ -56,7 +56,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    top: -60px;
+    top: -50%;
 }
 
 .hero h1 {
