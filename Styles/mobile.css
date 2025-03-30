@@ -4,6 +4,7 @@
     }
 }
 
+
 /* mobile.css */
 @media (max-width: 768px) {
     .vimeo-embed {
@@ -13,7 +14,7 @@
             height: 100vh;
             overflow: hidden;
             z-index: 0;
-         transform: scale(3.6);
+         transform: scale(3.7);
         }
 
     .vimeo-embed iframe {
