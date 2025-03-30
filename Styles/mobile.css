@@ -7,16 +7,16 @@
 /* mobile.css */
 @media (max-width: 768px) {
     .vimeo-embed {
+        position: relative;
         top: 50%;
-        left: 50%;
-        position: relative;              /* Changed from absolute */
+        left: 50%; /* Changed from absolute */
         height: 100%;
         overflow: hidden;
         z-index: 0;
     }
 
     .vimeo-embed iframe {
-        position: absolute;
+        position: relative;
         top: 50%;
         left: 50%;
         transform: scale(4);
