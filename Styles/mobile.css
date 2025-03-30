@@ -14,7 +14,7 @@
             height: 100vh;
             overflow: hidden;
             z-index: 0;
-         transform: scale(3.9);
+         transform: scale(4);
         }
 
     .vimeo-embed iframe {
