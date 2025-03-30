@@ -8,8 +8,7 @@
 @media (max-width: 768px) {
     .vimeo-embed {
             position: relative;
-            bottom: 100%;
-            left: 2.5%;
+            left: 1%;
             width: 100vw;
             height: 100vh;
             overflow: hidden;
