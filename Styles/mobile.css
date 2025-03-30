@@ -4,26 +4,25 @@
     }
 }
 
-/* mobile.css */
 @media (max-width: 768px) {
     .vimeo-embed {
         position: relative;
         width: 100%;
-        height: 100vh; /* вся высота экрана */
+        height: 100vh;
         overflow: hidden;
     }
 
     .vimeo-embed iframe {
         position: absolute;
-        top: 0;
+        top: 50%;
         left: 50%;
-        height: 100%;
-        width: auto;
-        min-width: 100%;
-        transform: translateX(-50%);
+        width: 200vw; /* шире, чем экран */
+        height: 200vh; /* выше, чем экран */
+        transform: translate(-50%, -50%);
         border: none;
     }
 }
+
 
 
 
