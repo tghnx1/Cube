@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="../Styles/vimeo.css">
   <link rel="stylesheet" href="../Styles/mobile.css">
   <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="../Scripts/sound.js"></script>
+  <script src="../Scripts/playButton.js"></script>
 </head>
 <body>
 
@@ -24,7 +26,13 @@
    </video>
 -->
   <div class="vimeo-embed">
-    <iframe id="vimeo-player" src="https://player.vimeo.com/video/1070111241?h=b77fd7933f&badge=0&autopause=0&player_id=0&app_id=58479&background=1" allow="fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="refugee"></iframe>
+    <iframe
+            id="vimeo-player"
+            src="https://player.vimeo.com/video/1070111241?h=b77fd7933f&autoplay=1&muted=1&background=1&autopause=0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+            style="position:absolute;top:0;left:0;width:100%;height:100%;"
+            title="refugee">
+    </iframe>
   </div>
 
   <!-- Play Button -->
@@ -71,7 +79,5 @@
 <footer>
   &copy; 2023 DJ HOLYWANDERER | <a href="https://www.instagram.com/holywandererrr/" target="_blank">Instagram</a>
 </footer>
-<script src="../Scripts/sound.js"></script>
-<script src="../Scripts/playButton.js"></script>
 </body>
 </html>
