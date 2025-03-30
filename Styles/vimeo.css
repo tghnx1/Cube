@@ -1,5 +1,5 @@
 /* vimeo.css */
-.vimeo-embed {
+.vimeo-refugee {
     position: fixed;
     top: 0;
     left: -3%;
@@ -9,7 +9,7 @@
     overflow: hidden;
 }
 
-.vimeo-embed iframe {
+.vimeo-refugee iframe {
     position: absolute;
     top: 0;
     left: 0;
