@@ -7,6 +7,19 @@
 
 /* mobile.css */
 @media (max-width: 768px) {
+
+    .hero-content {
+        position: relative;
+        z-index: 2; /* Sit above the overlay */
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center; /* Center text */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        top: -35%;
+    }
     .vimeo-embed {
             position: relative;
             left: 0;
