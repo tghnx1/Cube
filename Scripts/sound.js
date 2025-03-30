@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const soundToggle = document.getElementById('sound-toggle');
 
     // Autoplay muted
-    player.setVolume(0);
+    player.setVolume(1);
     // Sound toggle button
     soundToggle.addEventListener('click', () => {
         player.getVolume().then(currentVolume => {

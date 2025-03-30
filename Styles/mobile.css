@@ -1,3 +1,9 @@
+@media (min-width: 769px) {
+    #play-button {
+        display: none;
+    }
+}
+
 /* mobile.css */
 @media (max-width: 768px) {
     .vimeo-embed {
