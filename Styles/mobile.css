@@ -12,6 +12,7 @@
         height: 300px; /* <-- Crop height here */
         overflow: hidden;
     }
+
     .vimeo-embed iframe {
         position: absolute;
         top: -100px; /* <-- Adjust to crop vertically */
