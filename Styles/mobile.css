@@ -7,18 +7,18 @@
 @media (max-width: 768px) {
     .vimeo-embed {
         position: relative;
-        width: 100%;
+        width: 100vw;
         height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         overflow: hidden;
     }
 
     .vimeo-embed iframe {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 200vw; /* шире, чем экран */
-        height: 200vh; /* выше, чем экран */
-        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
         border: none;
     }
 }
