@@ -19,9 +19,8 @@
 
     .vimeo-embed iframe {
         position: relative;
-        top: 90%;
+        top: 50%;
         left: 50%;
-        transform-origin: center;
         border: none;
     }
 
