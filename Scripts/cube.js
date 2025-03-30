@@ -9,7 +9,7 @@ const textures = [
     textureLoader.load('./Media/Matr.png'), // Back face
     textureLoader.load('./Media/Who.png'), // Top face
     textureLoader.load('./Media/Legalisation.png'), // Bottom face
-    textureLoader.load('./Media/Mein.png'), // Right face
+    textureLoader.load('./Media/White.png'), // Right face
     textureLoader.load('./Media/White.png'), // Left face
 ];
 
