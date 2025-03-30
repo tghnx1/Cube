@@ -8,6 +8,14 @@
 /* mobile.css */
 @media (max-width: 768px) {
 
+    .soundcloud-embed {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 2; /* Ensure it is above other elements */
+    }
+
     .hero-content {
         position: relative;
         z-index: 2; /* Sit above the overlay */
