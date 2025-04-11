@@ -13,13 +13,6 @@ scene.add(ambientLight);
 
 const directionalLight = new THREE.DirectionalLight(0xffffff, 1); // Strong directional light
 directionalLight.position.set(5, 10, 7.5);
-directionalLight.intensity = 2; // Higher intensity for stronger shadows
-directionalLight.shadow.bias = -0.005; // Reduce shadow artifacts
 scene.add(directionalLight);
-
-// Enable shadows for the scene
-const renderer = new THREE.WebGLRenderer({ antialias: true });
-renderer.shadowMap.enabled = true;
-renderer.shadowMap.type = THREE.PCFSoftShadowMap; // Use soft shadows
 
 export { scene, camera };
