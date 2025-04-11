@@ -1,4 +1,4 @@
-import * as THREE from 'https://unpkg.com/three@0.157.0/build/three.module.js';
+
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x000000); // Set background color to solid black
@@ -13,8 +13,8 @@ scene.add(ambientLight);
 
 const directionalLight = new THREE.DirectionalLight(0xffffff, 1); // Strong directional light
 directionalLight.position.set(5, 10, 7.5);
-directionalLight.shadow.mapSize.width = 1024; // Shadow resolution
-directionalLight.shadow.mapSize.height = 1024;
+directionalLight.shadow.mapSize.width = 2048; // Shadow resolution
+directionalLight.shadow.mapSize.height = 2048;
 scene.add(directionalLight);
 
 // Enable shadows for the scene
