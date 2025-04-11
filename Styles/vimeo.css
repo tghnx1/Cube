@@ -1,5 +1,7 @@
 /* vimeo.css */
 .vimeo-refugee {
+    border: 2px solid red; /* Add a red border to the container */
+    background-color: rgba(255, 0, 0, 0.2); /* Add a semi-transparent background */
     position: fixed;
     top: 0;
     left: -3%;
@@ -10,6 +12,7 @@
 }
 
 .vimeo-refugee iframe {
+    border: 2px solid blue; /* Add a blue border to the iframe */
     position: absolute;
     top: 0;
     left: 0;
