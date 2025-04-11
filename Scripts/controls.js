@@ -97,6 +97,20 @@ function onTouchStart(event) {
 
 function onTouchEnd() {
     isDragging = false; // Stop dragging
+    if (dragThreshold > maxClickThreshold) return; // It was a drag, not a click.
+
+    // Convert touch coordinates to normalized device coordinates
+    mouse.x = (lastTouchX / window.innerWidth) * 2 - 1;
+    mouse.y = -(lastTouchY / window.innerHeight) * 2 + 1;
+
+    // Perform raycasting
+    raycaster.setFromCamera(mouse, camera);
+    const intersects = raycaster.intersectObject(cube);
+
+    if (intersects.length > 0) {
+        const faceIndex = Math.floor(intersects[0].faceIndex / 2); // Get cube face
+        redirectToPage(faceIndex);
+    }
 }
 
 function registerEventListeners() {
@@ -106,7 +120,7 @@ function registerEventListeners() {
     window.addEventListener('click', onMouseClick); // Enable raycasting
     window.addEventListener('touchstart', onTouchStart, { passive: false });
     window.addEventListener('touchmove', onTouchMove, { passive: false });
-    window.addEventListener('touchend', onTouchEnd);
+    window.addEventListener('touchend', onTouchEnd,{ passive: false });
 }
 
 
