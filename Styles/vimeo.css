@@ -1,8 +1,8 @@
 /* vimeo.css */
 /* container for the video */
-.vimeo-refugee {
-    border: 2px solid red; /* Add a red border to the container */
-    background-color: rgba(255, 0, 0, 0.2); /* Add a semi-transparent background */
+.vimeo-refugee, .vimeo-matreshka, .vimeo-legalization {
+    /*border: 2px solid red; /* Add a red border to the container */
+    /*background-color: rgba(255, 0, 0, 0.2); /* Add a semi-transparent background */
     position: fixed;
     top: 50%;
     left: 50%;
@@ -14,8 +14,8 @@
 }
 
 /* iframe for the video inside of container */
-.vimeo-refugee iframe {
-    border: 2px solid blue; /* Add a blue border to the iframe */
+.vimeo-refugee, .vimeo-legalization, .vimeo-matreshka iframe {
+    /*border: 2px solid blue; /* Add a blue border to the iframe */
     position: absolute;
     top: 0;
     left: 0;
@@ -25,8 +25,8 @@
     object-fit: cover;
     pointer-events: none; /* Ensure the video does not interfere with other elements */
 }
+/*
 
-/* vimeo.css */
 .vimeo-matreshka {
     position: fixed;
     top: 0;
@@ -62,5 +62,6 @@
     left: 0;
     width: 120%;
     height: 120%;
-    pointer-events: none; /* Ensure the video does not interfere with other elements */
+    pointer-events: none;
 }
+*/
