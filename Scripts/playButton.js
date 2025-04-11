@@ -8,6 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
     playButton.addEventListener('click', () => {
         player.play().then(() => {
             player.setVolume(1);
+
+            // Request fullscreen
+            player.requestFullscreen().catch(error => {
+                console.error('Error enabling fullscreen:', error);
+            });
         }).catch(error => {
             console.error('Error playing the video:', error);
         });
