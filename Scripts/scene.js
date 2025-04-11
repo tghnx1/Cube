@@ -15,7 +15,7 @@ const directionalLight = new THREE.DirectionalLight(0xffffff, 1); // Strong dire
 directionalLight.position.set(5, 10, 7.5);
 directionalLight.shadow.mapSize.width = 2048; // Shadow resolution
 directionalLight.shadow.mapSize.height = 2048;
-directionalLight.intensity = 10; // Higher intensity for stronger shadows
+directionalLight.intensity = 3; // Higher intensity for stronger shadows
 //directionalLight.shadow.bias = -0.005; // Reduce shadow artifacts
 scene.add(directionalLight);
 
