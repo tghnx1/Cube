@@ -15,6 +15,7 @@
     left: 0;
     width: 120%;
     height: 120%;
+    object-fit: cover;
     pointer-events: none; /* Ensure the video does not interfere with other elements */
 }
 
