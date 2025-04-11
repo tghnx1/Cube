@@ -1,13 +1,9 @@
-import { camera, scene } from './scene.js';
+import { camera } from './scene.js';
 import { cube } from './cube.js';
-import * as THREE from 'https://unpkg.com/three@0.157.0/build/three.module.js';
 
 let isDragging = false;
 export { isDragging };
 let dragThreshold = 0; // Records the total movement during dragging
-let targetZoom = camera.position.z; // The zoom position we want to reach
-const zoomSpeed = 0.1; // Zoom sensitivity
-const smoothingFactor = 0.1; // Determines how smooth the zooming is (lower is smoother)
 const maxClickThreshold = 5; // Maximum movement (in pixels) to still consider as a click
 
 
@@ -61,6 +57,7 @@ function onMouseUp() {
     isDragging = false; // Stop dragging
 }
 
+
 function onMouseClick(event) {
     if (dragThreshold > maxClickThreshold)
         return; // It was a drag, so don't navigate.
@@ -102,7 +99,7 @@ function onTouchEnd() {
     isDragging = false; // Stop dragging
 }
 
-function registerEventListeners(renderer) {
+function registerEventListeners() {
     window.addEventListener('mousedown', onMouseDown);
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('mouseup', onMouseUp);
