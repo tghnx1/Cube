@@ -6,8 +6,8 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 120%;
-    height: 120%;
+    width: 130%;
+    height: 130%;
     z-index: -1;
     overflow: hidden;
     transform: translate(-50%, -50%); /* Center the container */
