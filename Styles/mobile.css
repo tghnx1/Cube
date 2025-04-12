@@ -17,9 +17,6 @@
         z-index: 9999; /* гарантированно выше */
     }
 
-    .hero-content {
-        /*text-align: center; /* Center text */
-    }
 
     .vimeo-refugee {
         width: 400%;
