@@ -1,3 +1,9 @@
+@media (min-width: 769px) {
+    #play-button {
+        display: none; /* Hides the button */
+    }
+}
+
 @media (max-width: 796px) {
 
     #play-button {
