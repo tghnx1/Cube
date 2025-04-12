@@ -15,14 +15,21 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-// Autoplay with sound initially
+    // Autoplay with sound initially
     player.setVolume(1).then(() => {
         return player.play();
+    }).then(() => {
+        // Check if the video is actually playing
+        return player.getPaused();
+    }).then(isPaused => {
+        if (isPaused) {
+            console.warn('Autoplay with sound failed, retrying muted...');
+            attemptPlay(0); // Fallback to muted playback
+        } else {
+            console.log('Autoplay with sound succeeded.');
+        }
     }).catch(error => {
-        console.error('Autoplay with sound failed:', error);
-        console.warn('Retrying autoplay muted...');
-        // Fallback to muted playback
-        attemptPlay(0);
+        console.error('Error during autoplay attempt:', error);
     });
 
 
