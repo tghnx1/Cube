@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
     };
 
 // Autoplay muted
-    player.setVolume(0).then(() => {
+    player.setVolume(1).then(() => {
         return player.play();
     }).catch(error => {
         console.error('Autoplay failed in Firefox:', error);
