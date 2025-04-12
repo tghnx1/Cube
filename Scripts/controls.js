@@ -113,8 +113,6 @@ function onTouchEnd() {
     }
 }
 
-
-
 function registerEventListeners() {
     window.addEventListener('mousedown', onMouseDown);
     window.addEventListener('mousemove', onMouseMove);
