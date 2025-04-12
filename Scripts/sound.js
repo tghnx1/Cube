@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
     };
 
     // Autoplay muted
-    player.setVolume(1).catch(error => {
+    player.setVolume(0).catch(error => {
         console.error('Error setting volume to 1:', error);
         attemptPlay(0); // Fallback to muted playback
     });
