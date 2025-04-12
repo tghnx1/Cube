@@ -12,11 +12,18 @@ window.addEventListener('DOMContentLoaded', () => {
             console.log(`Video is playing with volume: ${volume}`);
         }).catch(error => {
             console.error(`Failed to play video with volume ${volume}:`, error);
+            if (volume > 0) {
+                console.warn('Retrying autoplay muted...');
+                attemptPlay(0); // Retry with muted playback
+            }
         });
     };
 
     // Autoplay with sound initially
-    player.setVolume(1).then(() => {
+    attemptPlay(1);
+
+    // Autoplay with sound initially
+    /*player.setVolume(1).then(() => {
         return player.play();
     }).then(() => {
         // Check if the video is actually playing
@@ -30,7 +37,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }).catch(error => {
         console.error('Error during autoplay attempt:', error);
-    });
+    });*/
 
 
     // Sound toggle button
