@@ -20,6 +20,16 @@ window.addEventListener('DOMContentLoaded', () => {
 
     attemptPlay(1);
 
+    // Log when the video is paused
+    player.on('pause', () => {
+        console.log('The video was paused.');
+    });
+
+    // Log when the video has ended
+    player.on('ended', () => {
+        console.log('The video has stopped (ended).');
+    });
+
     // Autoplay with sound initially
     /*player.setVolume(1).then(() => {
         return player.play();
