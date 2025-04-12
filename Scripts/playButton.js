@@ -12,24 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
         playButton.style.display = 'none';
     });
 
-    // Function to attempt video playback
-    const attemptPlay = (volume) => {
-        player.setVolume(volume).then(() => {
-            return player.play();
-        }).then(() => {
-            console.log(`Video is playing with volume: ${volume}`);
-        }).catch(error => {
-            console.error(`Failed to play video with volume ${volume}:`, error);
-        });
-    };
 
     // Play video on button click
     playButton.addEventListener('click', () => {
         player.play().then(() => {
-            player.setVolume(0);
+            player.setVolume(1);
         }).catch(error => {
             console.warn('Autoplay blocked, retrying with muted video:', error);
-            attemptPlay(0); // Retry with muted video
         });
     });
 });
