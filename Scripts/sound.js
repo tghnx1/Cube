@@ -15,16 +15,18 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-// Autoplay muted
+// Autoplay with sound initially
     player.setVolume(1).then(() => {
         return player.play();
     }).catch(error => {
-        console.error('Autoplay failed in Firefox:', error);
-        console.warn('Ensure autoplay is allowed in browser settings.');
+        console.error('Autoplay with sound failed:', error);
+        console.warn('Retrying autoplay muted...');
+        // Fallback to muted playback
+        attemptPlay(0);
     });
+
+
     // Sound toggle button
-
-
     soundToggle.addEventListener('click', () => {
         player.getVolume().then(currentVolume => {
             if (currentVolume === 0) {
