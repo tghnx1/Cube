@@ -9,15 +9,7 @@
 @media (max-width: 796px) {
 
     #play-button {
-        position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 3;
-        display: flex; /* Makes the element a flex container */
-        justify-content: center;
-        align-items: center;
-        text-align: center;
+
     }
 
     .soundcloud-embed {
