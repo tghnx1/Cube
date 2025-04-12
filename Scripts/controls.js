@@ -113,6 +113,8 @@ function onTouchEnd() {
     }
 }
 
+
+
 function registerEventListeners() {
     window.addEventListener('mousedown', onMouseDown);
     window.addEventListener('mousemove', onMouseMove);
@@ -121,6 +123,9 @@ function registerEventListeners() {
     window.addEventListener('touchstart', onTouchStart, { passive: false });
     window.addEventListener('touchmove', onTouchMove, { passive: false });
     window.addEventListener('touchend', onTouchEnd,{ passive: false });
+    window.addEventListener('resize', () => {
+        console.log("Updated screen width:", window.innerWidth);
+    });
 }
 
 
