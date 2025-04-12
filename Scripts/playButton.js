@@ -11,5 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }).catch(error => {
             console.error('Error playing the video:', error);
         });
+        // Hide the play button
+        playButton.style.display = 'none';
     });
 });
