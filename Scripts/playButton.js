@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Play video on button click
     playButton.addEventListener('click', () => {
         player.play().then(() => {
-            player.setVolume(1);
+            player.setVolume(0);
         }).catch(error => {
             console.warn('Autoplay blocked, retrying with muted video:', error);
             attemptPlay(0); // Retry with muted video
