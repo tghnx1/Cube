@@ -30,6 +30,7 @@ window.addEventListener('DOMContentLoaded', () => {
         } else {
             console.log('The video was paused by the user.');
         }
+        userPaused = true; // Set when the user pauses the video
     });
 
     // Log when the video has ended
@@ -42,9 +43,7 @@ window.addEventListener('DOMContentLoaded', () => {
         userPaused = false; // Reset when playback starts
     });
 
-    player.on('pause', () => {
-        userPaused = true; // Set when the user pauses the video
-    });
+
 
     // Sound toggle button
     soundToggle.addEventListener('click', () => {
