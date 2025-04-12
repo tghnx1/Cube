@@ -3,6 +3,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const player = new Vimeo.Player(iframe);
     const soundToggle = document.getElementById('sound-toggle');
 
+    let userPaused = false; // Track if the user intentionally paused the video
     // Function to attempt video playback
     const attemptPlay = (volume) => {
         console.log(`Attempting to play video with volume: ${volume}`);
@@ -23,7 +24,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Log when the video is paused
     player.on('pause', () => {
-        console.log('The video was paused.');
+        if (!userPaused) {
+            console.error('Retrying autoplay muted...');
+            console.warn('Video was paused unexpectedly. Retrying playback...');
+            attemptPlay(0); // Retry muted playback
+        } else {
+            console.log('The video was paused by the user.');
+            console.warn('The video was paused by the user.');
+        }
     });
 
     // Log when the video has ended
@@ -31,17 +39,13 @@ window.addEventListener('DOMContentLoaded', () => {
         console.log('The video has stopped (ended).');
     });
 
-    player.play().then(() => {
-        return player.getPaused();
-    }).then(isPaused => {
-        if (isPaused) {
-            console.warn('Autoplay with sound failed, retrying muted...');
-            attemptPlay(0);
-        } else {
-            console.log('Autoplay with sound succeeded.');
-        }
-    }).catch(error => {
-        console.error('Error during autoplay attempt:', error);
+    // Track user-initiated pause
+    player.on('play', () => {
+        userPaused = false; // Reset when playback starts
+    });
+
+    player.on('pause', () => {
+        userPaused = true; // Set when the user pauses the video
     });
 
     // Autoplay with sound initially
