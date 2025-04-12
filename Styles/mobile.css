@@ -8,10 +8,6 @@
 /* mobile.css */
 @media (max-width: 796px) {
 
-    #play-button {
-        z-index: 10;
-    }
-
     .soundcloud-embed {
         position: fixed;
         bottom: 0;
