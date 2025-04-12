@@ -5,6 +5,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Function to attempt video playback
     const attemptPlay = (volume) => {
+        console.log(`Attempting to play video with volume: ${volume}`);
         player.setVolume(volume).then(() => {
             return player.play();
         }).then(() => {
@@ -28,6 +29,19 @@ window.addEventListener('DOMContentLoaded', () => {
     // Log when the video has ended
     player.on('ended', () => {
         console.log('The video has stopped (ended).');
+    });
+
+    player.play().then(() => {
+        return player.getPaused();
+    }).then(isPaused => {
+        if (isPaused) {
+            console.warn('Autoplay with sound failed, retrying muted...');
+            attemptPlay(0);
+        } else {
+            console.log('Autoplay with sound succeeded.');
+        }
+    }).catch(error => {
+        console.error('Error during autoplay attempt:', error);
     });
 
     // Autoplay with sound initially
