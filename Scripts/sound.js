@@ -25,12 +25,10 @@ window.addEventListener('DOMContentLoaded', () => {
     // Log when the video is paused
     player.on('pause', () => {
         if (!userPaused) {
-            console.error('Retrying autoplay muted...');
             console.warn('Video was paused unexpectedly. Retrying playback...');
             attemptPlay(0); // Retry muted playback
         } else {
             console.log('The video was paused by the user.');
-            console.warn('The video was paused by the user.');
         }
     });
 
@@ -47,24 +45,6 @@ window.addEventListener('DOMContentLoaded', () => {
     player.on('pause', () => {
         userPaused = true; // Set when the user pauses the video
     });
-
-    // Autoplay with sound initially
-    /*player.setVolume(1).then(() => {
-        return player.play();
-    }).then(() => {
-        // Check if the video is actually playing
-        return player.getPaused();
-    }).then(isPaused => {
-        if (isPaused) {
-            console.warn('Autoplay with sound failed, retrying muted...');
-            attemptPlay(0); // Fallback to muted playback
-        } else {
-            console.log('Autoplay with sound succeeded.');
-        }
-    }).catch(error => {
-        console.error('Error during autoplay attempt:', error);
-    });*/
-
 
     // Sound toggle button
     soundToggle.addEventListener('click', () => {
