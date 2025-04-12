@@ -19,11 +19,6 @@
 
     .hero-content {
         text-align: center; /* Center text */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        /*top: -35%;*/
     }
 
     .vimeo-refugee {
