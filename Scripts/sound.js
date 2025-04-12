@@ -3,7 +3,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const player = new Vimeo.Player(iframe);
     const soundToggle = document.getElementById('sound-toggle');
 
-
     // Function to attempt video playback
     const attemptPlay = (volume) => {
         player.setVolume(volume).then(() => {
@@ -19,7 +18,6 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Autoplay with sound initially
     attemptPlay(1);
 
     // Autoplay with sound initially
