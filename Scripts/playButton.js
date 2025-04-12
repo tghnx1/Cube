@@ -12,5 +12,4 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Error playing the video:', error);
         });
     });
-
 });
