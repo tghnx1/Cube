@@ -43,8 +43,6 @@ window.addEventListener('DOMContentLoaded', () => {
         userPaused = false; // Reset when playback starts
     });
 
-
-
     // Sound toggle button
     soundToggle.addEventListener('click', () => {
         player.getVolume().then(currentVolume => {
