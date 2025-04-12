@@ -4,6 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const player = new Vimeo.Player(iframe);
     const playButton = document.getElementById('play-button');
 
+    // Debugging: Log the player instance
+    console.log(player);
+    // Listen for the play event
+    player.on('play', () => {
+        // Hide the play button when the video starts playing
+        playButton.style.display = 'none';
+    });
     // Play video on button click
     playButton.addEventListener('click', () => {
         player.play().then(() => {
@@ -11,7 +18,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }).catch(error => {
             console.error('Error playing the video:', error);
         });
-        // Hide the play button
-        playButton.style.display = 'none';
     });
 });
