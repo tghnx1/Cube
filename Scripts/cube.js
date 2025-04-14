@@ -26,7 +26,7 @@ const materials = textures.map(texture => new THREE.MeshPhongMaterial({ map: tex
 const geometry = new THREE.BoxGeometry(4, 4, 4); // Cube dimensions (4x4x4)
 
 // Corrected UV mapping for each face
-const uvMapping = [
+/*const uvMapping = [
     [0, 0, 1, 0, 1, 1, 0, 1], // Front face
     [0, 0, 1, 0, 1, 1, 0, 1], // Back face
     [0, 1, 1, 1, 1, 0, 0, 0], // Top face
@@ -43,7 +43,7 @@ geometry.setAttribute(
     'uv',
     new THREE.Float32BufferAttribute(uvArray, 2)
 );
-
+*/
 // Create the cube mesh
 const cube = new THREE.Mesh(geometry, materials);
 
