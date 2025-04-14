@@ -13,8 +13,11 @@ const textures = [
     textureLoader.load('./Media/White.png'), // Left face
 ];
 
-textures.minFilter = THREE.NearestFilter; // Disable mipmaps; prioritize sharpness
-textures.magFilter = THREE.NearestFilter; // For magnifying the texture
+// Disable mipmaps for sharpness
+textures.forEach(texture => {
+    texture.minFilter = THREE.NearestFilter;
+    texture.magFilter = THREE.NearestFilter;
+});
 
 // Define an array of materials, one for each face
 const materials = textures.map(texture => new THREE.MeshPhongMaterial({ map: texture }));
@@ -22,6 +25,32 @@ const materials = textures.map(texture => new THREE.MeshPhongMaterial({ map: tex
 // Define the geometry for the cube
 const geometry = new THREE.BoxGeometry(4, 4, 4); // Cube dimensions (4x4x4)
 
+// Adjust UV mapping for each face
+const uvMapping = [
+    [0, 0, 1, 0, 1, 1, 0, 1], // Front face
+    [1, 0, 0, 0, 0, 1, 1, 1], // Back face
+    [0, 1, 1, 1, 1, 0, 0, 0], // Top face
+    [0, 0, 1, 0, 1, 1, 0, 1], // Bottom face
+    [0, 0, 1, 0, 1, 1, 0, 1], // Right face
+    [1, 0, 0, 0, 0, 1, 1, 1], // Left face
+];
+
+geometry.faceVertexUvs[0] = [];
+for (let i = 0; i < 6; i++) {
+    const [u1, v1, u2, v2, u3, v3, u4, v4] = uvMapping[i];
+    geometry.faceVertexUvs[0].push(
+        [
+            new THREE.Vector2(u1, v1),
+            new THREE.Vector2(u2, v2),
+            new THREE.Vector2(u4, v4),
+        ],
+        [
+            new THREE.Vector2(u2, v2),
+            new THREE.Vector2(u3, v3),
+            new THREE.Vector2(u4, v4),
+        ]
+    );
+}
 // Create the cube mesh
 const cube = new THREE.Mesh(geometry, materials);
 
