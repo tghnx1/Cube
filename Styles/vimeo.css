@@ -13,6 +13,27 @@
     transform: translate(-50%, -50%); /* Center the container */
 }
 
+.vimeo-matreshka .vimeo-whoroscope {
+    border: 2px solid red; /* Add a red border to the container */
+    /*background-color: rgba(255, 0, 0, 0.2); /* Add a semi-transparent background */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 110%;
+    height: 110%;
+    z-index: -1;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+}
+
+.vimeo-matreshka {
+    z-index: -1;
+}
+
+.vimeo-whoroscope {
+    z-index: 0; /* Adjust z-index to ensure visibility */
+}
+
 /* iframe for the video inside of container */
 .vimeo-refugee iframe, .vimeo-legalization iframe, .vimeo-matreshka iframe
 {
@@ -27,28 +48,5 @@
 }
 
 
-.vimeo-matreshka {
-    border: 2px solid red; /* Add a red border to the container */
-    /*background-color: rgba(255, 0, 0, 0.2); /* Add a semi-transparent background */
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 110%;
-    height: 110%;
-    z-index: -1;
-    overflow: hidden;
-    transform: translate(-50%, -50%);
-}
 
-.vimeo-whoroscope {
-    border: 2px solid red; /* Add a red border to the container */
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 110%;
-    height: 110%;
-    z-index: 0; /* Adjust z-index to ensure visibility */
-    overflow: hidden;
-    transform: translate(-50%, -50%);
-}
 
