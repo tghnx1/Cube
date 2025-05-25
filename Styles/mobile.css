@@ -24,7 +24,11 @@
 
     .vimeo-whoroscope {
         position: absolute;
-        transform: none; /* Remove centering transform */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the video */
+        width: 100%; /* Adjust width for mobile */
+        height: auto; /* Maintain aspect ratio */
     }
 
     .vimeo-legalization {
