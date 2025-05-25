@@ -13,14 +13,14 @@
     transform: translate(-50%, -50%); /* Center the container */
 }
 
-.vimeo-matreshka .vimeo-whoroscope {
+.vimeo-matreshka, .vimeo-whoroscope {
     border: 2px solid red; /* Add a red border to the container */
     /*background-color: rgba(255, 0, 0, 0.2); /* Add a semi-transparent background */
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 180%;
-    height: 180%;
+    width: 110%;
+    height: 110%;
     z-index: 0;
     overflow: hidden;
     transform: translate(-50%, -50%);
