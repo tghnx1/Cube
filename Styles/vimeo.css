@@ -21,18 +21,12 @@
     left: 50%;
     width: 110%;
     height: 110%;
-    z-index: 0;
+    z-index: -1;
     overflow: hidden;
     transform: translate(-50%, -50%);
 }
 
-.vimeo-matreshka {
-    z-index: -1;
-}
 
-.vimeo-whoroscope {
-    z-index: 0; /* Adjust z-index to ensure visibility */
-}
 
 /* iframe for the video inside of container */
 .vimeo-refugee iframe, .vimeo-legalization iframe, .vimeo-matreshka iframe
