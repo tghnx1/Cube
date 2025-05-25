@@ -41,6 +41,17 @@
     transform: translate(-50%, -50%);
 }
 
+.open-air {
+    position: relative;
+    width: 100%;
+    height: 50vh; /* Adjust height as needed */
+    overflow: hidden;
+}
+
+.open-air {
+    margin-top: 50vh; /* Matches the height of the new video section */
+}
+
 .vimeo-matreshka iframe {
     border: 2px solid blue; /* Add a blue border to the iframe */
     position: absolute;
