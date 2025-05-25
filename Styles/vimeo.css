@@ -14,7 +14,7 @@
 }
 
 /* iframe for the video inside of container */
-.vimeo-refugee iframe, .vimeo-legalization, .vimeo-matreshka, .vimeo-whoroscope iframe
+.vimeo-refugee iframe, .vimeo-legalization iframe, .vimeo-matreshka iframe
 {
     /*border: 2px solid blue; /* Add a blue border to the iframe */
     position: absolute;
