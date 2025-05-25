@@ -52,5 +52,17 @@
   &copy; 2023 DJ HOLYWANDERER | <a href="https://www.instagram.com/holywandererrr/" target="_blank">Instagram</a>
   | <a href="https://soundcloud.com/holywanderer" target="_blank">Sound Cloud</a>
 </footer>
+
+<!-- Scripts -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+const iframe = document.getElementById("vimeo-player");
+const mobileVideoSrc = "https://player.vimeo.com/video/1087537565?h=0981896496&autoplay=1&muted=1&background=1&autopause=0&dnt=1";
+
+if (window.matchMedia("(max-width: 796px)").matches) {
+iframe.src = mobileVideoSrc;
+}
+});
+</script>
 </body>
 </html>
