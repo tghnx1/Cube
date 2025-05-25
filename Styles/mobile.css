@@ -23,8 +23,12 @@
     }
 
     vimeo-whoroscope {
-        transform: none; /* Remove centering transform */
-        position: absolute; /* Adjust position for mobile */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Centers the video */
+        width: 100%; /* Adjust as needed */
+        height: auto; /* Maintain aspect ratio */
     }
 
     .vimeo-legalization {
