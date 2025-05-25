@@ -80,7 +80,7 @@ function onMouseClick(event) {
 function redirectToPage(faceIndex) {
     const pages = [
         './Pages/Playground.html',
-        './Pages/Halloween.html',
+        './Pages/Marteshka.html',
         './Pages/About.html',
         './Pages/Legalisation.html',
     ];
