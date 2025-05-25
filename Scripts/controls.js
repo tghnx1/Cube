@@ -36,6 +36,8 @@ function onMouseMove(event) {
 function onTouchMove(event) {
     if (!isDragging) return;
 
+    event.preventDefault(); // Prevent the browser from swiping down
+
     const rotationSpeed = 0.005; // Adjust rotation speed
 
     const touch = event.touches[0];
