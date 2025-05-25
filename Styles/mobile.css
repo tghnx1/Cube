@@ -45,7 +45,7 @@
     }
 
     /* iframe for the video inside of container */
-    .vimeo-whoroscope iframe, iframe {
+    .vimeo-whoroscope iframe {
 
         /*border: 2px solid blue; /* Add a blue border to the iframe */
         position: absolute;
