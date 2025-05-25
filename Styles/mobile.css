@@ -18,8 +18,8 @@
     }
 
     .vimeo-matreshka, .vimeo-whoroscope {
-        width: 100%;
-        height: 100%;
+        width: 110%;
+        height: 110%;
         transform: none; /* Remove centering transform */
         position: fixed; /* Adjust position for mobile */
         top: 50%;
