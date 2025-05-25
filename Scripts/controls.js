@@ -83,6 +83,7 @@ function redirectToPage(faceIndex) {
         './Pages/Marteshka.html',
         './Pages/About.html',
         './Pages/Legalisation.html',
+        './Pages/Whoroscope.html',
     ];
     if (faceIndex >= 0 && faceIndex < pages.length) {
         window.location.href = pages[faceIndex]; // Navigate to corresponding page
