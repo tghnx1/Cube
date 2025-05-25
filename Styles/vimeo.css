@@ -28,7 +28,7 @@
 }
 
 
-.vimeo-matreshka {
+.vimeo-matreshka, .open-air {
     border: 2px solid red; /* Add a red border to the container */
     background-color: rgba(255, 0, 0, 0.2); /* Add a semi-transparent background */
     position: fixed;
@@ -41,18 +41,7 @@
     transform: translate(-50%, -50%);
 }
 
-.open-air {
-    position: relative;
-    width: 100%;
-    height: 50vh; /* Adjust height as needed */
-    overflow: hidden;
-}
-
-.open-air {
-    margin-top: 50vh; /* Matches the height of the new video section */
-}
-
-.vimeo-matreshka iframe {
+.vimeo-matreshka, .open-air iframe {
     border: 2px solid blue; /* Add a blue border to the iframe */
     position: absolute;
     top: 0;
