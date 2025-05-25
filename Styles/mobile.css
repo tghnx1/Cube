@@ -17,12 +17,12 @@
         height: 400%;
     }
 
-    vimeo-matreshka {
+    .vimeo-matreshka {
         transform: none; /* Remove centering transform */
         position: absolute; /* Adjust position for mobile */
     }
 
-    vimeo-whoroscope {
+    .vimeo-whoroscope {
         position: absolute;
         transform: none; /* Remove centering transform */
     }
