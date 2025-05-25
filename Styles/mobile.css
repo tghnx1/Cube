@@ -22,6 +22,11 @@
         position: absolute; /* Adjust position for mobile */
     }
 
+    vimeo-whoroscope {
+        transform: none; /* Remove centering transform */
+        position: absolute; /* Adjust position for mobile */
+    }
+
     .vimeo-legalization {
         width: 320%;
         height: 320%;

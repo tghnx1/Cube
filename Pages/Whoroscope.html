@@ -22,7 +22,7 @@
 
 <section class="hero">
 
-  <div class="vimeo-matreshka">
+  <div class="vimeo-whoroscope">
     <iframe
             id="vimeo-player"
             src="https://player.vimeo.com/video/1087510357?h=c737de967d&autoplay=1&muted=1&background=1&autopause=0&dnt=1"
@@ -52,5 +52,19 @@
   &copy; 2023 DJ HOLYWANDERER | <a href="https://www.instagram.com/holywandererrr/" target="_blank">Instagram</a>
   | <a href="https://soundcloud.com/holywanderer" target="_blank">Sound Cloud</a>
 </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const iframe = document.getElementById("vimeo-player");
+    const mobileVideoSrc = "https://player.vimeo.com/video/1087537797?h=f82e4201c0&autoplay=1&muted=1&background=1&autopause=0&dnt=1";
+
+    if (window.matchMedia("(max-width: 796px)").matches) {
+      iframe.src = mobileVideoSrc;
+    }
+  });
+</script>
+  });
+
+
 </body>
 </html>
